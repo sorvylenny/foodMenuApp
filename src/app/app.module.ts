@@ -3,14 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { ListfoodComponent } from './Components/pages/listfood/listfood.component';
+import { DetailsFoodComponent } from './Components/pages/details-food/details-food.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './Components/pages/header/header.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListfoodComponent,
+    DetailsFoodComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

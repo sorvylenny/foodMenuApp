@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="cards-container">
+  <div class="card" *ngFor="let meal of meals">
+    <div class="card-details">
+      <img [src]="meal.strMealThumb" alt="">
+      <p class="text-title">{{meal.strMeal}}</p>
+      <p class="text-body">{{meal.strCategory}}</p>
+    </div>
+    <a class="card-button" (click)="detailsFoodById(meal.idMeal)">More info</a>
+  </div>
+</div>
