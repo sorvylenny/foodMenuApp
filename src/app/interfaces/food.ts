@@ -1,8 +1,8 @@
 export interface Food {
-  meals : Meals[]
+  meals : Meals[];
 }
 
-export interface Meals{
+export interface Meals {
   idMeal         : string;
   strMeal        : string;
   strDrinkAlternate: string | null;

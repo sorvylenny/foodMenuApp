@@ -1,95 +1,53 @@
-body {
-  background-color: #f8f9fa; /* Color de fondo claro para todo el cuerpo */
+.header {
+  overflow: hidden;
+  background-color: #3586ff;
+  padding: 20px 10px;
+  width: 100%;
 }
 
-header {
-  background-color: #f8f9fa; /* Color de fondo claro para el encabezado */
-  padding: 15px; /* Ajusta el relleno según sea necesario */
+/* Style the header links */
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
 }
 
-.container-fluid{
-  background-color:#6c00f8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  border-radius: 1rem;
-  width: auto;
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
-
-/* Genel stil */
-.toggle-switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 24px;
-  margin: 10px;
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-/* Giriş stil */
-.toggle-switch .toggle-input {
-  display: none;
+/* Style the active/current link*/
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
 }
 
-/* Anahtarın stilinin etrafındaki etiketin stil */
-.toggle-switch .toggle-label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 24px;
-  background-color: black;
-  border-radius: 34px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* Float the link section to the right */
+.header-right {
+  float: right;
 }
 
-/* Anahtarın yuvarlak kısmının stil */
-.toggle-switch .toggle-label::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  top: 2px;
-  left: 2px;
-  background-color: beige;
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
-}
-
-/* Anahtarın etkin hale gelmesindeki stil değişiklikleri */
-.toggle-switch .toggle-input:checked + .toggle-label {
-  background-color: white;
-}
-
-.toggle-switch .toggle-input:checked + .toggle-label::before {
-  transform: translateX(16px);
-}
-
-/* Light tema */
-.toggle-switch.light .toggle-label {
-  background-color: #BEBEBE;
-}
-
-.toggle-switch.light .toggle-input:checked + .toggle-label {
-  background-color: #9B9B9B;
-}
-
-.toggle-switch.light .toggle-input:checked + .toggle-label::before {
-  transform: translateX(6px);
-}
-
-/* Dark tema */
-.toggle-switch.dark .toggle-label {
-  background-color: #4B4B4B;
-}
-
-.toggle-switch.dark .toggle-input:checked + .toggle-label {
-  background-color: #717171;
-}
-
-.toggle-switch.dark .toggle-input:checked + .toggle-label::before {
-  transform: translateX(16px);
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
 }

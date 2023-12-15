@@ -17,8 +17,8 @@ export class FoodService {
     const url = `${this.baseUrl}filter.php?c=${name}`;
     return this.http.get<Food>(url);
   }
-  getFoodDetailsById(foodId: string): Observable<Meals>{
+  getFoodDetailsById(foodId: string): Observable<Food>{
     const url = `${this.baseUrl}lookup.php?i=${foodId}`;
-    return this.http.get<Meals>(url);
+    return this.http.get<Food>(url);
   }
 }

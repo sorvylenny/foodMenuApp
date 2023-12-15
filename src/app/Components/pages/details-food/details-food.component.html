@@ -1,5 +1,87 @@
-<div class="card">
-  <div class="card_load"></div>
-  <div class="card_load_extreme_title"></div>
-  <div class="card_load_extreme_descripion"></div>
+<!-- Card the movies -->
+<div class="container">
+  <div class="card">
+    <div class="card__img"><img [src]="foodDetails?.strMealThumb" alt="{{foodDetails?.strMeal}} image" class="st53">
+      </div>
+    <div class="card__descr-wrapper">
+      <!-- Movie title-->
+      <p class="card__title">
+        {{foodDetails?.strMeal}}
+      </p>
+      <!-- Movie tagline-->
+      <p class="card__title">
+        {{foodDetails?.strCategory}}
+      </p>
+      <!-- Movie release_date-->
+      <div class="span-Subtitle">
+        <span class="subtitle" *ngIf="foodDetails?.dateModified">
+          <strong>Date:</strong> {{foodDetails?.dateModified | date:'yyyy/MMMM/dd'}}
+        </span>
+          <p class="food_Area">{{foodDetails?.strArea}}</p>
+      </div>
+      <!-- Movie Overview-->
+      <div class="container_Instructions">
+        <strong>Instructions</strong>
+        <p class="card__descr">
+          {{foodDetails?.strInstructions}}
+        </p>
+      </div>
+      <div class="card__subtitles-container">
+        <!-- Ingredients -->
+        <div class="card__subtitle">
+          <span class="subtitle"> <strong>Ingredients:</strong></span>
+            <ul class="ingredients">
+              <li>{{foodDetails?.strIngredient1}}</li>
+              <li>{{foodDetails?.strIngredient2}}</li>
+              <li>{{foodDetails?.strIngredient3}}</li>
+              <li>{{foodDetails?.strIngredient4}}</li>
+              <li>{{foodDetails?.strIngredient5}}</li>
+              <li>{{foodDetails?.strIngredient6}}</li>
+              <li>{{foodDetails?.strIngredient7}}</li>
+              <li>{{foodDetails?.strIngredient8}}</li>
+              <li>{{foodDetails?.strIngredient9}}</li>
+              <li>{{foodDetails?.strIngredient10}}</li>
+            </ul>
+        </div>
+
+        <!-- Measures -->
+        <div class="card__subtitle">
+          <span class="subtitle"><strong>Measures:</strong></span>
+            <ul class="ingredients">
+              <li>{{foodDetails?.strMeasure1}}</li>
+              <li>{{foodDetails?.strMeasure2}}</li>
+              <li>{{foodDetails?.strMeasure3}}</li>
+              <li>{{foodDetails?.strMeasure4}}</li>
+              <li>{{foodDetails?.strMeasure5}}</li>
+              <li>{{foodDetails?.strMeasure6}}</li>
+              <li>{{foodDetails?.strMeasure7}}</li>
+              <li>{{foodDetails?.strMeasure8}}</li>
+              <li>{{foodDetails?.strMeasure9}}</li>
+              <li>{{foodDetails?.strMeasure10}}</li>
+            </ul>
+        </div>
+      </div>
+      <!-- Movie Production-->
+      <h4 class="title-Production">Video Youtube</h4><br />
+      <div class="production">
+        <div class="production-row">
+          <div class="youtube-video">
+            <iframe [src]="foodDetails?.strYoutube" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+      <!-- Button GoBack-->
+      <div class="card__links">
+       <!--  <div>
+           <button (click)="toAllFood()">
+              Return
+            </button>
+        </div> -->
+        <div>
+          <button class="btn" (click)="toAllFood()"><i class="animation"></i>Return<i class="animation"></i>
+          </button>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>

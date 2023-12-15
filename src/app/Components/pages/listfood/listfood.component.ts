@@ -21,6 +21,7 @@ meals: Meals[]=[];
     this.foodService.getFoodByName(name).subscribe(
       (data: any) => {
         this.meals = data.meals;
+        console.log(this.meals);
       },
       (error) => {
         console.error('Error fetching food by name:', error);
