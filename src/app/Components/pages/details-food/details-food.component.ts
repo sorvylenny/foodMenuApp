@@ -12,12 +12,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class DetailsFoodComponent implements OnInit {
   foodDetails: any | null;
   foodId: string | null = null;
-
+  video:string = '';
+  url: string = '';
   constructor(
     private foodService: FoodService,
     private route: ActivatedRoute,
     private router: Router,
-    private sanitizer: DomSanitizer
+    private _sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -29,23 +30,32 @@ export class DetailsFoodComponent implements OnInit {
     if (this.foodId) {
       this.foodService.getFoodDetailsById(this.foodId).subscribe(
         (data) => {
-          console.log(data);
 
-          // Verifica si data.meals existe y tiene al menos un elemento
           this.foodDetails = data.meals && data.meals.length > 0 ? data.meals[0] : null;
+          this.url = this.foodDetails.strYoutube;
 
-          if (this.foodDetails?.strYoutube) {
-            this.foodDetails.strYoutube = this.sanitizer.bypassSecurityTrustResourceUrl(this.foodDetails.strYoutube);
-            console.log('YouTube URL:', this.foodDetails.strYoutube);
-          }
         },
         (error) => {
           console.error('Error fetching cocktail details:', error);
         }
       );
     }
+
   }
 
+  getVideoIframe() {
+     var video, results;
+
+    if (this.url === null) {
+      return '';
+    }
+    results = this.url.match('[\\?&]v=([^&#]*)');
+    video = results === null ? this.url : results[1];
+
+    return this._sanitizer.bypassSecurityTrustResourceUrl(
+      'https://www.youtube.com/embed/' + video
+    );
+  }
   toAllFood(){
     this.router.navigate(['/listFood']);
   }

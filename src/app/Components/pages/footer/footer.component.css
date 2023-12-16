@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 * {
-  margin: 40px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family:' "PT Serif", serif';
 }
 
 .footer {
@@ -12,7 +11,6 @@
   width: 100%;
   background: #3586ff;
   min-height: 80px;
-  padding: 10px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,7 +108,7 @@
     background-position-x: 1000px;
   }
   100% {
-    background-positon-x: 0px;
+    background-position-x: 0px;
   }
 }
 
@@ -119,6 +117,6 @@
     background-position-x: -1000px;
   }
   100% {
-    background-positon-x: 0px;
+    background-position-x: 0px;
   }
 }

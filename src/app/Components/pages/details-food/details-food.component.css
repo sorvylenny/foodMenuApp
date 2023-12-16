@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&display=swap");
 
 body {
-  font-family: 'PT Serif', serif;
+  font-family: "PT Serif", serif;
 }
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin: 20px 0px 0px 0px;
 }
 
 .card {
   --font-color: #323232;
-  --bg-color: #e0e0e0;
+  --bg-color: white;
   width: auto;
   height: auto;
-  margin: 0;
+  margin: 30px 0 30px 0;
+  border: 2px solid #426bdb;
   border-radius: 20px;
   background: var(--bg-color);
-  box-shadow: -9px 9px 18px #f5f2f2,
-    9px -9px 18px #ffffff;
+  box-shadow: -9px 9px 18px #f5f2f2, 9px -9px 18px #ffffff;
   display: flex;
   justify-content: center;
   flex-direction: row;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .card:hover {
@@ -57,11 +57,12 @@ body {
 .card__descr {
   color: var(--font-color);
   text-align: justify;
-  font-size: 1rem;
+  font-size: 23px;
   margin-top: 10px;
+  line-height: 1.5;
 }
 
-.food_Area{
+.food_Area {
   font-size: 20px;
   text-transform: uppercase;
   color: var(--font-color);
@@ -88,7 +89,9 @@ body {
   justify-content: space-between;
   line-height: 2.5;
 }
-
+.text-instructions {
+  font-size: 25px;
+}
 .card__subtitles-container {
   display: flex;
   justify-content: space-between;
@@ -98,26 +101,27 @@ body {
 .card__subtitle {
   display: flex;
   justify-content: center;
- }
+}
 
- .subtitle {
-   font-size: 15px;
-   text-align: center;
-   }
+.subtitle {
+  font-size: 23px;
+  text-align: center;
+}
 
-  .ingredients {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    list-style: none;
-    margin: 0;
-  }
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
 
-  .ingredients li {
-    margin-right: 10px;
-    margin-bottom: 10px;
-    text-transform: capitalize;
-  }
+.ingredients li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-size: 25px;
+}
 
 .subtitle ul {
   display: flex;
@@ -143,11 +147,11 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  background: #40B3A2;
+  background: #426bdb;
   min-width: 200px;
   border: 0;
   border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   padding: 16px 20px;
   color: #fff;
@@ -155,12 +159,13 @@ body {
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+  font-family: "PT Serif", serif;
   overflow: hidden;
   cursor: pointer;
 }
 
 .btn:hover {
-  opacity: .95;
+  opacity: 0.95;
 }
 
 .btn .animation {
@@ -170,58 +175,36 @@ body {
 
 @keyframes ripple {
   0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1),
+      0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1),
+      0 0 0 60px rgba(255, 255, 255, 0.1);
   }
 
   100% {
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1),
+      0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1),
+      0 0 0 80px rgba(255, 255, 255, 0);
   }
 }
 
-/* button {
-  width: 150px;
-  height: 60px;
-  border: 3px solid #474f69;
-  border-radius: 45px;
-  transition: all 0.3s;
-  cursor: pointer;
-  background: white;
-  color: #4a4e5c;
-  font-size: 1.2em;
-  font-weight: 900;
-  font-family: 'PT Serif', serif;
-}
-
-button:hover {
-  background: #f5f6f8;
-  color: #5b5d66;
-  font-size: 1.5em;
-}
- */
-.production {
-  display: flex;
-  justify-content: space-around;
-}
-
-.title-Production {
+.title-youtube {
   text-align: center;
+  text-transform: uppercase;
+  color: var(--font-color);
+  font-size: 20px;
 }
-
-.production-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.yotube-video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 50%;
 }
-
-.production-item {
-  display: flex;
-  flex-direction: column;
-  margin: 10px 10px;
-}
-
-.image-production {
-  width: 100px;
-  height: auto;
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 425px) and (max-width: 767px) {
@@ -258,57 +241,19 @@ button:hover {
     position: absolute;
     font-size: 10px;
   }
-
-  .production-item {
-    margin: 0 5px;
-  }
-
-  .production-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .image-production {
-    width: 40px;
-    height: auto;
-  }
-
   .card__descr {
     color: var(--font-color);
     text-align: justify;
     font-size: 14px;
     margin-top: 10px;
   }
-
-  .card__links {
-    margin-top: 10px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  button {
-    width: 100px;
-    height: 40px;
-    border: 3px solid #474f69;
-    border-radius: 45px;
-    transition: all 0.3s;
-    cursor: pointer;
-    background: white;
-    color: #4a4e5c;
+  .title-youtube {
+    text-align: center;
     font-size: 14px;
-    font-weight: 900;
-    font-family: 'PT Serif', serif;
-  }
-
-  button:hover {
-    background: #f5f6f8;
-    color: #5b5d66;
-    font-size: 7px;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 424px){
+
+@media screen and (min-width: 320px) and (max-width: 424px) {
   .card {
     width: auto;
     height: auto;
@@ -343,138 +288,14 @@ button:hover {
     font-size: 10px;
   }
 
-  .production-item {
-    margin: 0 5px;
-  }
-
-  .production-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .image-production {
-    width: 40px;
-    height: auto;
-  }
-
   .card__descr {
     color: var(--font-color);
     text-align: justify;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 10px;
   }
-
-  .card__links {
-    margin-top: auto; /* Hace que el margen superior absorba todo el espacio disponible */
-    margin-right: 10px;
-    display: flex;
-    justify-content: flex-end; /* Alinea los elementos al final del contenedor en el eje principal (derecha) */
-  }
-
-  button {
-    width: 100px;
-    height: 40px;
-    border: 3px solid #474f69;
-    border-radius: 45px;
-    transition: all 0.3s;
-    cursor: pointer;
-    background: white;
-    color: #4a4e5c;
-    font-size: 14px;
-    font-weight: 900;
-    font-family: 'PT Serif', serif;
-  }
-
-  button:hover {
-    background: #f5f6f8;
-    color: #5b5d66;
-    font-size: 14px; /* Ajustado para que vuelva al tamaño original al pasar el ratón */
-  }
-
-}
-
-@media screen and (min-width: 320px) and (max-width: 424px){
-  .card {
-    width: auto;
-    height: auto;
-    margin: 130px auto;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-
-  .card__title {
-    font-size: 20px;
-  }
-
-  .card__img {
-    border-radius: 15px 15px 0 0;
-  }
-
-  .st53 {
-    width: 150px;
-    height: auto;
-  }
-
-  .subtitle {
-    font-size: 14px;
-    text-align: left;
-  }
-
-  .subtitle ul li::before {
-    content: "";
-    position: absolute;
-    font-size: 10px;
-  }
-
-  .production-item {
-    margin: 0 5px;
-  }
-
-  .production-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .image-production {
-    width: 40px;
-    height: auto;
-  }
-
-  .card__descr {
-    color: var(--font-color);
-    text-align: justify;
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .card__links {
-    margin-top: 10px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  button {
-    width: 100px;
-    height: 40px;
-    border: 3px solid #474f69;
-    border-radius: 45px;
-    transition: all 0.3s;
-    cursor: pointer;
-    background: white;
-    color: #4a4e5c;
-    font-size: 14px;
-    font-weight: 900;
-    font-family: 'PT Serif', serif;
-  }
-
-  button:hover {
-    background: #f5f6f8;
-    color: #5b5d66;
-    font-size: 7px;
+  .title-youtube {
+    text-align: center;
+    font-size: 12px;
   }
 }

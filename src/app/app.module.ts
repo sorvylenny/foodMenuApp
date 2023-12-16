@@ -8,6 +8,7 @@ import { DetailsFoodComponent } from './Components/pages/details-food/details-fo
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './Components/pages/header/header.component';
 import { FooterComponent } from './Components/pages/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FooterComponent } from './Components/pages/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

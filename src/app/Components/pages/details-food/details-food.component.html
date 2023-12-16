@@ -1,27 +1,28 @@
-<!-- Card the movies -->
+<app-header></app-header>
+<!-- Card the meals -->
 <div class="container">
   <div class="card">
     <div class="card__img"><img [src]="foodDetails?.strMealThumb" alt="{{foodDetails?.strMeal}} image" class="st53">
       </div>
     <div class="card__descr-wrapper">
-      <!-- Movie title-->
+      <!-- Title-->
       <p class="card__title">
         {{foodDetails?.strMeal}}
       </p>
-      <!-- Movie tagline-->
+      <!-- Category-->
       <p class="card__title">
         {{foodDetails?.strCategory}}
       </p>
-      <!-- Movie release_date-->
+      <!-- Date-->
       <div class="span-Subtitle">
         <span class="subtitle" *ngIf="foodDetails?.dateModified">
           <strong>Date:</strong> {{foodDetails?.dateModified | date:'yyyy/MMMM/dd'}}
         </span>
           <p class="food_Area">{{foodDetails?.strArea}}</p>
       </div>
-      <!-- Movie Overview-->
+      <!-- Instructions-->
       <div class="container_Instructions">
-        <strong>Instructions</strong>
+       <h4 class="text-instructions"><strong>Instructions</strong></h4>
         <p class="card__descr">
           {{foodDetails?.strInstructions}}
         </p>
@@ -61,22 +62,23 @@
             </ul>
         </div>
       </div>
-      <!-- Movie Production-->
-      <h4 class="title-Production">Video Youtube</h4><br />
-      <div class="production">
-        <div class="production-row">
-          <div class="youtube-video">
-            <iframe [src]="foodDetails?.strYoutube" frameborder="0"></iframe>
-          </div>
+      <!-- Video youtube-->
+      <ng-container *ngIf="getVideoIframe()">
+        <h4 class="title-youtube">Video Youtube</h4>
+        <br />
+        <div class="youtube-video">
+          <iframe
+            class="responsive-iframe"
+            style="position: relative; top: 0; left: 0;"
+            [src]="getVideoIframe()"
+            frameborder="1"
+            allow="accelerometer; encrypted-media; gyroscope;"
+            allowfullscreen
+          ></iframe>
         </div>
-      </div>
+      </ng-container>
       <!-- Button GoBack-->
       <div class="card__links">
-       <!--  <div>
-           <button (click)="toAllFood()">
-              Return
-            </button>
-        </div> -->
         <div>
           <button class="btn" (click)="toAllFood()"><i class="animation"></i>Return<i class="animation"></i>
           </button>
@@ -85,3 +87,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

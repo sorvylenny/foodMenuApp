@@ -1,17 +1,47 @@
 <app-header></app-header>
+<form #searchForm="ngForm" (ngSubmit)="searchFood(searchForm)">
+  <div class="form-control">
+    <input type="text" name="searchName" ngModel required>
+    <label>
+      <span style="transition-delay:0ms">S</span><span
+        style="transition-delay:50ms">e</span><span
+        style="transition-delay:100ms">a</span><span
+        style="transition-delay:150ms">c</span><span
+        style="transition-delay:200ms">h</span>
+    </label>
+  </div>
+</form>
+<div class="select-group">
+  <div class="select-container">
+    <span for="category" class="label-select">Select a category:</span>
+    <select id="category" class="select-css" [(ngModel)]="selectedCategory"
+      (change)="onCategoryChange()">
+      <option *ngFor="let category of categories" [value]="category.strCategory">{{category.strCategory}}</option>
+    </select>
+  </div>
+  <div class="select-container">
+    <span for="category" class="label-select">Select a Area:</span>
+    <select id="category" class="select-css" [(ngModel)]="selectedArea"
+      (change)="onAreaChange()">
+      <option *ngFor="let footArea of area" [value]="footArea.strArea">{{footArea.strArea}}</option>
+    </select>
+  </div>
+</div>
 <div class="container">
   <section class="mx-auto my-6">
     <div class="row">
       <div class="card box-shadow-large" *ngFor="let meal of meals">
         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-          <img [src]="meal.strMealThumb" alt="{{meal.strMeal}}" image class="img-fluid" />
+          <img [src]="meal.strMealThumb" alt="{{meal.strMeal}}" image
+            class="img-fluid" (click)="detailsFoodById(meal.idMeal)"/>
         </div>
         <div class="card-body">
           <h5 class="card-title"><a>{{meal.strMeal}}</a></h5>
         </div>
         <div>
           <div class="card-button">
-            <button class="btn" (click)="detailsFoodById(meal.idMeal)"><i class="animation"></i>More<i class="animation"></i></button>
+            <button class="btn" (click)="detailsFoodById(meal.idMeal)"><i
+                class="animation"></i>More<i class="animation"></i></button>
           </div>
         </div>
       </div>
